@@ -51,6 +51,8 @@ html{
 }
 .header .logo{
     width: 50%;
+    display: flex;
+    align-items: center;
 }
 .header .logo h2 a{
     text-decoration: none;
@@ -75,6 +77,26 @@ html{
 }
 .header .logo a:hover span{
     color: var(--black);
+}
+.header .logo ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.header .logo ul li{
+    margin-left: 20px;
+}
+.header .logo img{
+     width: 20px;
+     transition: all 0.3s;
+     -o-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+     -webkit-transition: all 0.3s;
+}
+.header .logo ul li:hover img{
+    transform: scale(1.1);
 }
 .header .links{
     position: relative;
@@ -256,37 +278,23 @@ html{
     left: 50%;
     transform: translateX(-50%);
 }
+
 .services .container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
 }
 .services .feat{
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-    margin: 2px 0;
 }
-.services .feat .box-img{
-    width: 50%;
-    height: 100px;
-}
-.services .feat .box-img img{
+.services .feat img{
     width: 100%;
+    height: 80px;
+    display: block;
 }
-.services .feat .box-text{
-    width: 100%;
-}
-.services .feat .box-text h2{
-    font-size: 22px;
-    font-weight: 650;
-}
-.services .feat .box-text p{
+.services .feat ul{
     width: 70%;
-    margin: 0 auto 0px auto;
-    font-size: 16px;
-    min-height: 250px;
+    margin: 20px auto;
+    list-style: decimal;
 }
 /* START the-team */
 .the-team{
@@ -444,18 +452,12 @@ html{
 }
 .brief p{
     color: #444;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2.5;
     letter-spacing: 0.8px;
     display: block;
     width: 80%;
     margin: 20px auto;
-}
-.brief p span{
-    color: #333;
-    font-weight: 800;
-    letter-spacing: 0;
-    width: 50px;
 }
 /* END brief */
 /* START client */
@@ -523,7 +525,7 @@ html{
 }
 .conect ul{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .conect ul li{
     list-style: none;

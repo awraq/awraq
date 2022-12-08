@@ -1,640 +1,450 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Cairo', sans-serif;
-    outline: none;
-    user-select: none;
-    box-sizing: border-box;
-}
-
-:root {
-    --bg: #ececec;
-    --blue: #2596b3;
-    --black: #000;
-    --white: #fff;
-}
-
-body {
-    /* font-family: 'bein', Roboto, sans-serif; */
-    font-family: 'Cairo', sans-serif;
-    background: var(--bg);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--blue);
-}
-
-::-webkit-scrollbar-track {
-    background-color: var(--bg);
-}
-
-.container {
-    width: 95%;
-    margin: 0 auto;
-}
-
-
-/* START HEADER  */
-
-.header {
-    background: var(--white);
-    position: static;
-    top: 0;
-    left: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-}
-
-.header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header .logo {
-    width: 50%;
-    display: flex;
-    align-items: center;
-}
-
-.header .logo h2 a {
-    text-decoration: none;
-    color: var(--black);
-    font-size: 30px;
-    text-transform: uppercase;
-    transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-}
-
-.header .logo h2 span {
-    color: var(--blue);
-    font-size: 35px;
-    transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-}
-
-.header .logo a:hover {
-    color: var(--blue);
-}
-
-.header .logo a:hover span {
-    color: var(--black);
-}
-
-.header .logo ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.header .logo ul li {
-    margin-left: 20px;
-}
-
-.header .logo img {
-    width: 20px;
-    transition: all 0.3s;
-    -o-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-}
-
-.header .logo ul li:hover img {
-    transform: scale(1.1);
-}
-
-.header .links {
-    position: relative;
-}
-
-.header .links ul {
-    list-style: none;
-}
-
-.header .links ul li {
-    display: inline;
-}
-
-.header .links ul li a {
-    text-decoration: none;
-    color: var(--black);
-    font-size: 18px;
-    margin: 0 10px;
-    font-weight: 600;
-    transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-}
-
-.header .links ul li a:hover {
-    color: var(--blue);
-}
-
-@media (max-width: 1000px) {
-    .header .links {
-        position: relative;
-    }
-    .header .links .icon {
-        cursor: pointer;
-        width: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-    }
-    .header .links .icon span {
-        background: var(--black);
-        width: 100%;
-        height: 2px;
-        margin-bottom: 5px;
-        transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -webkit-transition: all 0.4s;
-    }
-    .header .links .icon span:nth-child(2) {
-        width: 50%;
-    }
-    .header .links:hover span:nth-child(2) {
-        width: 100%;
-    }
-    .header .links:hover .icon span {
-        background: var(--blue)
-    }
-    .header .links ul {
-        background: var(--white);
-        position: absolute;
-        right: 0;
-        width: 150px;
-        text-align: right;
-        top: 45px;
-        border-radius: 5px;
-        -o-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        height: 0;
-        overflow: hidden;
-        transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
-        -webkit-transition: all 0.4s;
-        z-index: 999;
-    }
-    .header .links ul li {
-        display: block;
-        padding: 5px 0;
-    }
-    .header .links ul li a {
-        margin: 0;
-        padding: 0 5px;
-        display: block;
-    }
-    .header .links ul li a:hover {
-        color: var(--blue);
-        background: #ddd;
-    }
-    .header .links:hover ul {
-        height: 85px;
-    }
-}
-
-
-/* START SWIPRE  */
-
-.slider {
-    height: calc(99vh - 60px);
-    position: relative;
-    top: 0px;
-}
-
-.slider .swiper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slider .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: var(--white);
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    position: relative;
-}
-
-.slider .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slider .box-text {
-    position: absolute;
-    z-index: 99;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
-    min-width: 300px;
-    min-height: 100px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    -o-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-.slider .box-text h2 {
-    padding: 5px;
-}
-
-@media (max-width: 1000px) {
-    .slider {
-        height: calc(50vh - 60px);
-    }
-    .slider .box-text h2 {
-        font-size: 18px;
-    }
-}
-
-
-/* START services */
-
-.services {
-    text-align: center;
-}
-
-.head-h {
-    font-size: 30px;
-    margin: 30px 0;
-    position: relative;
-    width: 100%;
-}
-
-.head-h::after {
-    content: '';
-    background: var(--blue);
-    width: 5%;
-    height: 6px;
-    border-radius: 5px;
-    -o-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.services .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-}
-
-.services .feat {
-    width: 100%;
-}
-
-.services .feat img {
-    width: 100%;
-    height: 80px;
-    display: block;
-}
-
-.services .feat ul {
-    width: 70%;
-    margin: 20px auto;
-    list-style: decimal;
-}
-
-
-/* START the-team */
-
-.the-team {
-    text-align: center;
-    background: #fff;
-    padding: 50px 0;
-}
-
-.the-team .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-}
-
-.the-team .feat {
-    width: 100%;
-    margin: 20px 0;
-}
-
-.the-team .feat .box-img {
-    width: 100%;
-}
-
-.the-team .feat .box-img img {
-    width: 40%;
-    height: 40%;
-    border-radius: 50%;
-    -o-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-}
-
-.the-team .feat .box-text {
-    width: 100%;
-}
-
-.the-team .feat .box-text h3 {
-    font-size: 20px;
-    text-transform: capitalize;
-    margin: 0;
-}
-
-.the-team .feat .box-text h3+span {
-    text-transform: capitalize;
-    font-size: 15px;
-    color: var(--blue);
-    font-weight: bold;
-    margin-top: -10px;
-    display: block;
-}
-
-.the-team .feat .box-text .link {
-    list-style: none;
-}
-
-.the-team .feat .box-text .link li {
-    display: inline;
-}
-
-.the-team .feat .box-text .link li a img {
-    width: 25px;
-    margin: 10px 5px;
-    height: 25px;
-    transition: all 0.3s;
-    -o-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-}
-
-.the-team .feat .box-text .link li a img:hover {
-    transform: scale(1.2);
-    padding: 0;
-}
-
-
-/* END the-team */
-
-/* START brief */
-
-.brief {
-    text-align: center;
-    background: #fff;
-    padding: 20px 0;
-}
-
-.brief p {
-    color: #444;
-    font-size: 18px;
-    line-height: 2.5;
-    letter-spacing: 0.8px;
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-}
-
-
-/* END brief */
-
-
-/* START client */
-
-.client .swiper {
-    width: 100%;
-    height: 100%;
-    margin: 50px 0;
-}
-
-.client .swiper-slide {
-    display: flex;
-    font-size: 18px;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-}
-
-.client .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.client {
-    text-align: center;
-}
-
-.client .feat {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.client .box-img {
-    background: #fff;
-    width: 100px;
-    border-radius: 50%;
-    margin: 0 auto;
-}
-
-.client img {
-    width: 100%;
-    border-radius: 50%;
-    background: #fff;
-}
-
-.client h3 {
-    font-size: 20px;
-}
-
-@media (max-width: 1000px) {
-    .client .box-img {
-        width: 80px;
-    }
-    .client h3 {
-        font-size: 16px;
-    }
-}
-
-
-/* START conect */
-
-.conect {
-    background: #fff;
-    text-align: center;
-}
-
-.conect ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-}
-
-.conect ul li {
-    list-style: none;
-}
-
-.conect ul li a {
-    width: 80%;
-    color: #000;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    background: #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    -o-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-    border: 4px solid #ddd;
-}
-
-.conect ul li a:hover {
-    background: var(--blue);
-    border-color: var(--blue);
-    color: #fff;
-}
-
-.conect ul li a img {
-    width: 30px;
-    margin: 0 5px;
-}
-
-@media (max-width: 800px) {
-    .conect ul li a {
-        width: 50%;
-    }
-}
-
-
-/* END conect */
-
-
-/* START FOOTER  */
-
-.footer {
-    background: var(--bg);
-    border-top: 1px solid #ddd;
-    text-align: center;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-}
-
-.footer span a {
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--blue);
-}
-
-
-/* END FOOTER  */
-
-#myBtn {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Fixed/sticky position */
-    bottom: 20px;
-    /* Place the button at the bottom of the page */
-    right: 30px;
-    /* Place the button 30px from the right */
-    z-index: 99;
-    /* Make sure it does not overlap */
-    border: none;
-    /* Remove borders */
-    outline: none;
-    /* Remove outline */
-    background-color: var(--blue);
-    /* Set a background color */
-    color: white;
-    /* Text color */
-    cursor: pointer;
-    /* Add a mouse pointer on hover */
-    padding: 7px;
-    /* Some padding */
-    border-radius: 10px;
-    /* Rounded corners */
-    font-size: 16px;
-    /* Increase font size */
-    transition: all 0.3s;
-    -o-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-}
-
-#myBtn:hover {
-    background-color: #9596be;
-    /* Add a dark-grey background on hover */
-}
-
-#myBtn img {
-    width: 20px;
-}
-
-.swiper-button-next,
-.swiper-rtl .swiper-button-prev,
-.swiper-button-prev,
-.swiper-rtl .swiper-button-next {
-    color: var(--blue);
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--blue);
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awraq</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- STRAT HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>
+                    <a href="index.html">
+                        Aw<span>r</span>aq
+                    </a>
+                </h2>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/%D9%85%D9%86%D8%B5%D8%A9-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-107397315302066/?ref=pages_you_manage"><img src="img/icon/facebook.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/mawr.aq/"><img src="img/icon/instagram.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send/?phone=447859365443&text&app_absent=0"><img src="img/icon/whatsapp.svg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/+PViS6k9x-EswMTA0"><img src="img/icon/telegram.svg" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+            <nav class="links">
+                <span class="icon">
+                    <span></span>
+                <span></span>
+                <span></span>
+                </span>
+                <ul class="link">
+                    <li><a href="index.html">الصفحة الرئيسية</a></li>
+                    <li><a href="https://m-awraq.blogspot.com/">المدونة</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- END HEADER -->
+    <!-- START SWIPER  -->
+    <section class="slider">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- START SWIPER 1  -->
+                <div class="swiper-slide">
+                    <img src="img/slider/ricardo.jpg" alt="">
+                    <div class="box-text">
+                        <h2>
+                            " قسم الخدمات المكتبية "
+                        </h2>
+                    </div>
+                    <div class="box-rgba"></div>
+                </div>
+                <!-- END SWIPER 1  -->
+                <!-- START SWIPER 1  -->
+                <div class="swiper-slide">
+                    <img src="img/slider/production.jpg" alt="">
+                    <div class="box-text">
+                        <h2>
+                            " قسم التغطية الإعلامية "
+                        </h2>
+                    </div>
+                    <div class="box-rgba"></div>
+                </div>
+                <!-- END SWIPER 1  -->
+                <!-- START SWIPER 1  -->
+                <div class="swiper-slide">
+                    <img src="img/slider/ricardo.jpg" alt="">
+                    <div class="box-text">
+                        <h2>
+                            " قسم كتابة المحتوى "
+                        </h2>
+                    </div>
+                    <div class="box-rgba"></div>
+                </div>
+                <!-- END SWIPER 1  -->
+                <!-- START SWIPER 1  -->
+                <div class="swiper-slide">
+                    <img src="img/slider/pixabay.jpg" alt="">
+                    <div class="box-text">
+                        <h2>
+                            " قسم خدمات السوشيال ميديا "
+                        </h2>
+                    </div>
+                    <div class="box-rgba"></div>
+                </div>
+                <!-- END SWIPER 1  -->
+                <!-- START SWIPER 1  -->
+                <div class="swiper-slide">
+                    <img src="img/slider/web-design.jpg" alt="">
+                    <div class="box-text">
+                        <h2>
+                            " قسم تصميم وبرمجة مواقع الويب "
+                        </h2>
+                    </div>
+                    <div class="box-rgba"></div>
+                </div>
+                <!-- END SWIPER 1  -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- END SWIPER  -->
+    <!-- start Services -->
+    <section class="services">
+        <h2 class="head-h">خدمات</h2>
+        <div class="container">
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/icon/serv/social.svg" alt="">
+                </div>
+                <div class="box-text">
+                    <h2>سوشيال ميديا</h2>
+                    <ul>
+                        <li>إدارة الحسابات على السوشيال ميديا</li>
+                        <li>تقديم أفضل الوسائل للترويج و الإعلان التجاري</li>
+                        <li>الاستشارات حول التسويق الإعلاني عبر وسائل التواصل الاجتماعي</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/icon/serv/programming.svg" alt="">
+                </div>
+                <div class="box-text">
+                    <h2>التصميم والبرمجة</h2>
+                    <ul>
+                        <li>تصميم واجهات المواقع الالكترونية</li>
+                        <li>استشارات حول إنشاء المواقع الالكترونية</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/icon/serv/camera.svg" alt="">
+                </div>
+                <div class="box-text">
+                    <h2>التغطية الإعلامية</h2>
+                    <ul>
+                        <li>تصوير بروموو إعلاني للمنشآت التجارية</li>
+                        <li>تصوير بروموو إعلاني للمدارس والمعاهد</li>
+                        <li>تصوير جميع أنواع المناسبات</li>
+                        <li>تصميم وطباعة الكروت الإعلانية</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+        </div>
+        <div class="container">
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/icon/serv/book.svg" alt="">
+                </div>
+                <div class="box-text">
+                    <h2>الخدمات المكتبية</h2>
+                    <ul>
+                        <li>تنضيد الكتب والمحاضرات</li>
+                        <li>الأرشفة الإلكترونية</li>
+                        <li>(cv) تصميم السيرة الذاتية </li>
+                        <li>كتابة حلقات بحث</li>
+                        <li>إدخال البيانات</li>
+                        <li>استشارات مكتبية</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/icon/serv/book-2.svg" alt="">
+                </div>
+                <div class="box-text">
+                    <h2>كتابة المحتوى</h2>
+                    <ul>
+                        <li>كتابة المقالات</li>
+                        <li>إدارة محتوى</li>
+                        <li>استشارات حول كتابة المحتوى</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+        </div>
+    </section>
+    <!-- end Services -->
+    <!-- START the team -->
+    <section class="the-team">
+        <h2 class="head-h">فريق العمل</h2>
+        <div class="container">
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/team/1.jpg" alt="">
+                </div>
+                <div class="box-text">
+                    <h3>Wesam shaker</h3>
+                    <span>web designer</span>
+                    <ul class="link">
+                        <li>
+                            <a target="block" href="https://www.facebook.com/profile.php?id=100012377165830"><img src="img/icon/facebook.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://www.instagram.com/wesam_shaker.1/"><img src="img/icon/instagram.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://api.whatsapp.com/send/?phone=447859365443&text&app_absent=0"><img src="img/icon/whatsapp.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://t.me/wesam_shaker"><img src="img/icon/telegram.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/team/2.jpeg" alt="">
+                </div>
+                <div class="box-text">
+                    <h3>omran ragab</h3>
+                    <span>photography</span>
+                    <ul class="link">
+                        <li>
+                            <a target="block" href="https://www.facebook.com/profile.php?id=100014340314241"><img src="img/icon/facebook.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://api.whatsapp.com/send/?phone=46728305123&text&app_absent=0"><img src="img/icon/whatsapp.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://t.me/amer201"><img src="img/icon/telegram.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+            <!-- START FEAT  -->
+            <div class="feat">
+                <div class="box-img">
+                    <img src="img/team/3.jpeg" alt="">
+                </div>
+                <div class="box-text">
+                    <h3>ayman alshame</h3>
+                    <span>Content writing</span>
+                    <ul class="link">
+                        <li>
+                            <a target="block" href="https://www.facebook.com/profile.php?id=100013118233346"><img src="img/icon/facebook.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://api.whatsapp.com/send/?phone=233504156485&text&app_absent=0"><img src="img/icon/whatsapp.svg" alt=""></a>
+                        </li>
+                        <li>
+                            <a target="block" href="https://t.me/aymanalshami"><img src="img/icon/telegram.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- END FEAT  -->
+        </div>
+    </section>
+    <!-- END the team -->
+    <!-- START Brief -->
+    <section class="brief">
+        <div class="container">
+            <h2 class="head-h">نبذة</h2>
+            <p>
+                منصة أوراق تقدم الخدمات المصغرة في عدة مجالات وبجودة عالية<br> نواكب التطورات التكنولوجية وتنمية المهارات الإبداعية
+            </p>
+        </div>
+    </section>
+    <!-- END Brief -->
+    <!-- START Client -->
+    <section class="client">
+        <h2 class="head-h">عملائنا</h2>
+        <div class="container">
+            <div class="swiper Swiper">
+                <div class="swiper-wrapper">
+                    <!-- start swiper  -->
+                    <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/1.png" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>مدرسة طريق المستقبل</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                    <!-- start swiper  -->
+                    <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/2.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>لوز وسكر</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                    <!-- start swiper  -->
+                    <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/3.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>مدرسة الجيل الواعد</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                    <!-- start swiper  -->
+                    <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/4.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>مدرسة بيادر السلام</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                     <!-- start swiper  -->
+                     <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/5.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>شركة انفنيتي</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                     <!-- start swiper  -->
+                     <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/6.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>نادي الامل الرياضي</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                    <!-- start swiper  -->
+                    <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/7.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>مدرسة ماري النموذجية</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                     <!-- start swiper  -->
+                     <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/8.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>شركة غنوم</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                    <!-- start swiper  -->
+                    <div class="swiper-slide">
+                        <div class="feat">
+                            <div class="box-img">
+                                <img src="img/zbon/9.PNG" alt="">
+                            </div>
+                            <div class="box-text">
+                                <h3>اكادمية تبصرة</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end swiper  -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- END Client -->
+    <!-- START conect -->
+    <section class="conect">
+        <div class="container">
+            <h2 class="head-h">تواصل معنا</h2>
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/%D9%85%D9%86%D8%B5%D8%A9-%D8%A7%D9%88%D8%B1%D8%A7%D9%82-107397315302066/?ref=pages_you_manage"><img src="img/icon/facebook.svg" alt="">Facebook</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/mawr.aq/"><img src="img/icon/instagram.svg" alt="">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://api.whatsapp.com/send/?phone=447859365443&text&app_absent=0"><img src="img/icon/whatsapp.svg" alt="">Whatsapp</a>
+                </li>
+                <li>
+                    <a href="https://t.me/+PViS6k9x-EswMTA0"><img src="img/icon/telegram.svg" alt="">Telegram</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- END connect -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><img src="img/icon/arrow.svg" alt=""></button>
+    <!-- START FOOTER  -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                &copy; جميع الحقوق محفوظة لـ <span><a href="index.html">منصة اوراق</a></span>
+            </p>
+        </div>
+    </footer>
+    <!-- END FOOTER  -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
